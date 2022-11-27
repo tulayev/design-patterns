@@ -39,6 +39,8 @@ namespace ObserverPattern.Classes
             _temperature = temperature;
             _humidity = humidity;
             _pressure = pressure;
+
+            MeasurementsChanged();
         }
     }
 }
