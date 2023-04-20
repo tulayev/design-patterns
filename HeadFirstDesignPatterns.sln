@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StrategyPattern", "Strategy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObserverPattern", "ObserverPattern\ObserverPattern.csproj", "{2949DCC3-95F3-4B6D-B88D-7CEBFC9EAA89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{82B95C2B-C7BE-4FDE-A659-D4E237A2029C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DecoratorPattern", "DecoratorPattern\DecoratorPattern.csproj", "{82B95C2B-C7BE-4FDE-A659-D4E237A2029C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLID", "SOLID\SOLID.csproj", "{D8D24871-699C-46A6-889D-FA535E4A4DFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{82B95C2B-C7BE-4FDE-A659-D4E237A2029C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82B95C2B-C7BE-4FDE-A659-D4E237A2029C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82B95C2B-C7BE-4FDE-A659-D4E237A2029C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8D24871-699C-46A6-889D-FA535E4A4DFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8D24871-699C-46A6-889D-FA535E4A4DFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8D24871-699C-46A6-889D-FA535E4A4DFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8D24871-699C-46A6-889D-FA535E4A4DFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
