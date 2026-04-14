@@ -4,12 +4,16 @@ namespace StrategyPattern
 {
     public abstract class Character
     {
-        private IWeaponBehavior _weaponBehavior; 
+        private IWeaponBehavior _weaponBehavior;
 
-        public void Fight() =>
+        public void Fight()
+        {
             _weaponBehavior.UseWeapon();
+        }
 
-        public void SetWeaponBehavior(IWeaponBehavior weaponBehavior) => 
+        public void SetWeaponBehavior(IWeaponBehavior weaponBehavior)
+        {
             _weaponBehavior = weaponBehavior;
+        }
     }
 }

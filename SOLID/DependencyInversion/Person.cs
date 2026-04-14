@@ -1,23 +1,23 @@
 ﻿namespace SOLID.DependencyInversion
 {
-    public enum RelationShip
+    internal enum RelationShip
     {
         Parent, Child
     }
 
-    public class Person
+    internal class Person
     {
         public string Name { get; set; }
     }
 
-    public interface IRelastionShipBrowser
+    internal interface IRelastionShipBrowser
     {
         IEnumerable<Person> FindAllChildrenOf(string name);
     }
 
-    public class RelationShips : IRelastionShipBrowser
+    internal class RelationShips : IRelastionShipBrowser
     {
-        private List<(Person, RelationShip, Person)> _relations = new();
+        private readonly List<(Person, RelationShip, Person)> _relations = new();
 
         public void AddParentAndChild(Person parent, Person child)
         {

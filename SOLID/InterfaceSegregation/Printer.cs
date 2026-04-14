@@ -1,16 +1,16 @@
 ﻿namespace SOLID.InterfaceSegregation
 {
-    public interface IScaner
+    internal interface IScaner
     {
         void Scan();
     }
-    
-    public interface IPrinter
+
+    internal interface IPrinter
     {
         void Print();
     }
 
-    public class Printer : IPrinter
+    internal class Printer : IPrinter
     {
         public void Print()
         {
@@ -18,7 +18,7 @@
         }
     }
 
-    public class Scaner : IScaner
+    internal class Scaner : IScaner
     {
         public void Scan()
         {

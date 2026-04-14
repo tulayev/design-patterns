@@ -11,8 +11,11 @@ If a class is using too many external dependencies (that is, other classes), tha
 This problem often comes when developers try to model the real world using objects and take it too far. 
 Loosely coupled applications often are not very easy to navigate and do not exactly model how the real world works.
 */
+Console.WriteLine("Single responsibility. A class should have only one responsibility. ");
+
 var persistence = new Persistence();
 var journal = new Journal();
+
 journal.AddEntry("Hello");
 journal.AddEntry("there!");
 persistence.SaveToFile(journal, "journal.txt");
@@ -21,22 +24,41 @@ persistence.SaveToFile(journal, "journal.txt");
 Open Closed. Classes should be extendible, but not modifiable. That means that adding a new field to a class is fine, but changing existing things are not. 
 Other components on the program may depend on said field. 
 */
-var hobbit = new Movie { Title = "Hobbit", Genre = Genre.Fantasy, Country = "USA" };
-var interstellar = new Movie { Title = "Interstellar", Genre = Genre.SciFi, Country = "USA" };
+Console.WriteLine("Open Closed. Classes should be extendible, but not modifiable.");
+
+var hobbit = new Movie 
+{ 
+    Title = "Hobbit", 
+    Genre = Genre.Fantasy, 
+    Country = "USA" 
+};
+var interstellar = new Movie 
+{ 
+    Title = "Interstellar", 
+    Genre = Genre.SciFi, 
+    Country = "USA" 
+};
+
 var movies = new List<Movie> { hobbit, interstellar };
 
 var filter = new CustomFilter();
-var filteredMovies = filter.Filter(movies, new AndSpecification<Movie>(
+var filteredMovies = filter.Filter(movies, 
+    new AndSpecification<Movie>(
         new GenreSpecification(Genre.Fantasy),
         new CountrySpecification("USA")
-    ));
+    )
+);
 
 foreach (var movie in filteredMovies)
+{
     Console.WriteLine(movie);
+}
 
 /*
-Liskov substitution. A class that expects an object of type Rectangle should work if a subclass Square is passed.
+Liskov substitution. A class that expects an object of type Rectangle should work as if a subclass Square is passed.
 */
+Console.WriteLine("Liskov substitution. A class that expects an object of type Rectangle should work as if a subclass Square is passed.");
+
 Rectangle rectangle = new()
 {
     Width = 12,
@@ -47,6 +69,9 @@ Rectangle square = new Square
 {
     Width = 12
 };
+
+Console.WriteLine(rectangle.Area());
+Console.WriteLine(square.Area());
 
 /*
 Interface segregation principle. Keep your interfaces the smallest you can. 
