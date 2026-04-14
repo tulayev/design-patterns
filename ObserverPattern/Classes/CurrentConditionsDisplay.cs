@@ -4,11 +4,9 @@ namespace ObserverPattern.Classes
 {
     public class CurrentConditionsDisplay : IObserver, IDisplayElement
     {
-        private readonly ISubject _weatherData;
-
         private float _temperature;
-
         private float _humidity;
+        private readonly ISubject _weatherData;
 
         public CurrentConditionsDisplay(ISubject weatherData)
         {
@@ -23,7 +21,9 @@ namespace ObserverPattern.Classes
             Display();
         }
 
-        public void Display() =>
+        public void Display()
+        {
             Console.WriteLine($"Current conditions: {_temperature}C and {_humidity}%");
+        }
     }
 }

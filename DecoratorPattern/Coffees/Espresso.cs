@@ -2,8 +2,7 @@
 {
     public class Espresso : Beverage
     {
-        public override string Description => 
-            "Espresso";
+        public override string Description => "Espresso";
 
         public override decimal Cost()
         {

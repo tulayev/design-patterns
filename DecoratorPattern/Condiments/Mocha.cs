@@ -7,8 +7,7 @@
             Beverage = beverage;     
         }
 
-        public override string Description =>
-            $"{Beverage.Description}, Mocha";
+        public override string Description => $"{Beverage.Description}, Mocha";
 
         public override decimal Cost()
         {

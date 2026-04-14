@@ -4,11 +4,11 @@ namespace BuilderPattern
 {
     public class HtmlElement
     {
-        private const int indentSize = 2;
-
         public string Name { get; set; }
 
         public string Text { get; set; }
+
+        private const int IndentSize = 2;
 
         public List<HtmlElement> Elements { get; set; } = new();
 
@@ -22,26 +22,32 @@ namespace BuilderPattern
             Text = text;
         }
 
+        public override string ToString()
+        {
+            return HtmlElementToString(0);
+        }
+
         private string HtmlElementToString(int indent)
         {
             var sb = new StringBuilder();
-            var i = new string(' ', indentSize * indent);
-            sb.AppendLine($"{i}<{Name}>");
+            var tabSize = new string(' ', IndentSize * indent);
+
+            sb.AppendLine($"{tabSize}<{Name}>");
 
             if (!string.IsNullOrWhiteSpace(Text)) 
             {
-                sb.Append(new string(' ', indentSize * (indent + 1)));
+                sb.Append(new string(' ', IndentSize * (indent + 1)));
                 sb.AppendLine(Text);
             }
 
             foreach (var element in Elements)
+            {
                 sb.Append(element.HtmlElementToString(indent + 1));
+            }
 
-            sb.AppendLine($"{i}</{Name}>");
+            sb.AppendLine($"{tabSize}</{Name}>");
+
             return sb.ToString();
         }
-
-        public override string ToString() =>
-            HtmlElementToString(0);
     }
 }

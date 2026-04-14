@@ -6,7 +6,9 @@
         
         public abstract decimal Cost();
 
-        public override string ToString() =>
-            $"{Description} -> ${Cost()}";
+        public override string ToString()
+        {
+            return $"{Description} -> ${Cost()}";
+        }
     }
 }

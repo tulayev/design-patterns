@@ -10,9 +10,12 @@ namespace PrototypePattern
         {
             using var ms = new MemoryStream();
             var formatter = new BinaryFormatter();
+
             formatter.Serialize(ms, self);
+            
             ms.Seek(0, SeekOrigin.Begin);
             object copy = formatter.Deserialize(ms);
+            
             return (T)copy;
         }
 
@@ -21,8 +24,11 @@ namespace PrototypePattern
         {
             using var ms = new MemoryStream();
             var serializer = new XmlSerializer(typeof(T));
+            
             serializer.Serialize(ms, self);
+            
             ms.Position = 0;
+            
             return (T)serializer.Deserialize(ms);
         }
     }

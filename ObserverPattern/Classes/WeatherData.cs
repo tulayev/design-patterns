@@ -4,24 +4,20 @@ namespace ObserverPattern.Classes
 {
     public class WeatherData : ISubject
     {
-        private readonly List<IObserver> _observersList;
-
         private float _temperature;
-        
         private float _humidity;
-        
         private float _pressure;
+        private readonly List<IObserver> _observersList = new();
 
-        public WeatherData()
+        public void RegisterObserver(IObserver observer)
         {
-            _observersList = new();
+            _observersList.Add(observer);
         }
 
-        public void RegisterObserver(IObserver observer) =>
-            _observersList.Add(observer);
-
-        public void RemoveObserver(IObserver observer) =>
+        public void RemoveObserver(IObserver observer)
+        {
             _observersList.Remove(observer);
+        }
 
         public void NotifyObservers()
         {

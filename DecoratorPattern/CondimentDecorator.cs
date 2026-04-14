@@ -4,7 +4,6 @@
     {
         protected Beverage Beverage;
 
-        public override string Description =>
-            Beverage != null ? Beverage.Description : string.Empty;
+        public override string Description => Beverage != null ? Beverage.Description : string.Empty;
     }
 }

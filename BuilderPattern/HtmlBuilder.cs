@@ -20,10 +20,14 @@
             return this;
         }
 
-        public override string ToString() =>
-            _root.ToString();
-
-        public void Clear() =>
+        public void Clear()
+        {
             _root = new() { Name = _rootName };
+        }
+
+        public override string ToString()
+        {
+            return _root.ToString();
+        }
     }
 }
