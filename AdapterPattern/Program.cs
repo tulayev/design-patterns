@@ -1,12 +1,19 @@
 ﻿using AdapterPattern;
 
-Console.WriteLine("Getting the interface you want from the interface you have. The Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate. " +
-    "It acts as a wrapper that translates the calls from a client into a format that a service (adaptee) can understand.\r\n" +
-    "Key Components:\r\n" +
-    "Target Interface: The specific interface that the client code expects and uses.\r\n" +
-    "Client: The class containing the existing business logic that needs to interact with a service.\r\n" +
-    "Adaptee: An existing class (often 3rd-party or legacy) with a useful function but an incompatible interface.\r\n" +
-    "Adapter: The \"middle-man\" class that implements the Target Interface and translates calls to the Adaptee.\r\n");
+/*
+Getting the interface you want from the interface you have.The Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+
+1. Key Components:
+    Target(Interface): The domain-specific interface that the client code uses.
+    Adapter: A class that implements the Target interface and wraps the Adaptee.
+    Adaptee: The existing class with an incompatible interface that needs adapting.
+    Client: The code that collaborates with objects adhering to the Target interface.
+
+2. Implementation Approaches:
+    Object Adapter (Composition): The adapter contains an instance of the adaptee class. This is the preferred approach, especially in languages like Java.
+    Class Adapter (Inheritance): The adapter inherits from the adaptee class and implements the target interface, requiring multiple inheritance (not supported in all languages).
+*/
+
 
 var vectorObjects = new List<VectorObject>
 {
