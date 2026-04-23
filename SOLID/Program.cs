@@ -3,14 +3,7 @@ using SOLID.OpenClosed;
 using SOLID.OpenClosed.Classes;
 using SOLID.SingleResponsibility;
 
-/*
-Single responsibility. A class should have only one responsibility. 
-That means that for example, a Person class should only worry about the domain problem regarding the person itself, and not for example, its persistence in the database. 
-For that, you may want to use a PersonDAO for example. A Person class may want to keep its responsibilities the shortest it can. 
-If a class is using too many external dependencies (that is, other classes), that's a symptom that the class is having too many responsibilities. 
-This problem often comes when developers try to model the real world using objects and take it too far. 
-Loosely coupled applications often are not very easy to navigate and do not exactly model how the real world works.
-*/
+
 Console.WriteLine("Single responsibility. A class should have only one responsibility. ");
 
 var persistence = new Persistence();
@@ -20,10 +13,7 @@ journal.AddEntry("Hello");
 journal.AddEntry("there!");
 persistence.SaveToFile(journal, "journal.txt");
 
-/*
-Open Closed. Classes should be extendible, but not modifiable. That means that adding a new field to a class is fine, but changing existing things are not. 
-Other components on the program may depend on said field. 
-*/
+
 Console.WriteLine("Open Closed. Classes should be extendible, but not modifiable.");
 
 var hobbit = new Movie 
@@ -54,9 +44,7 @@ foreach (var movie in filteredMovies)
     Console.WriteLine(movie);
 }
 
-/*
-Liskov substitution. A class that expects an object of type Rectangle should work as if a subclass Square is passed.
-*/
+
 Console.WriteLine("Liskov substitution. A class that expects an object of type Rectangle should work as if a subclass Square is passed.");
 
 Rectangle rectangle = new()
@@ -72,14 +60,3 @@ Rectangle square = new Square
 
 Console.WriteLine(rectangle.Area());
 Console.WriteLine(square.Area());
-
-/*
-Interface segregation principle. Keep your interfaces the smallest you can. 
-A teacher that also is a student should implement both the IStudent and ITeacher interfaces, instead of a single big interface called IStudentAndTeacher.
-*/
-
-/*
-Dependency inversion principle. Objects should not instantiate their dependencies, but they should be passed to them. 
-For example, a Car that has an Engine object inside should not do engine = new DieselEngine(), but rather said engine should be passed to it on the constructor. 
-This way the car class will not be coupled to the DieselEngine class. 
-*/

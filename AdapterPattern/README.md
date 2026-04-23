@@ -1,43 +1,35 @@
 # Adapter Design Pattern
 
-The **Adapter Pattern** is a structural design pattern that allows objects with incompatible interfaces to collaborate.
-
-It acts as a bridge between two incompatible interfaces by converting one interface into another that a client expects.
+The **Adapter** is a structural design pattern that allows objects with incompatible interfaces to collaborate. It acts as a wrapper, "getting the interface you want from the interface you have."
 
 ---
 
-## 📌 Key Idea
+## 1. Key Components
 
-> *Getting the interface you want from the interface you have.*
-
----
-
-## 🧩 Key Components
-
-### 1. Target (Interface)
-The interface that the client expects and uses.
-
-### 2. Adapter
-A class that:
-- Implements the **Target** interface  
-- Wraps an instance of the **Adaptee**  
-- Translates calls into a format the adaptee understands  
-
-### 3. Adaptee
-The existing class with an incompatible interface that needs to be adapted.
-
-### 4. Client
-The code that interacts only with the **Target** interface.
+*   **Target (Interface)**: The domain-specific interface that the client code uses.
+*   **Adapter**: A class that implements the Target interface and wraps the Adaptee.
+*   **Adaptee**: The existing class with an incompatible interface that needs adapting.
+*   **Client**: The code that collaborates with objects adhering to the Target interface.
 
 ---
 
-## ⚙️ Implementation Approaches
+## 2. Implementation Approaches
 
-### 🔹 1. Object Adapter (Composition) — *Recommended*
+### 🏗️ Object Adapter (Composition)
+The adapter contains an instance of the adaptee class. This is the **preferred approach** because it uses composition, making it more flexible and compatible with most languages (like Java or C#).
 
-- Uses **composition** (has-a relationship)
-- The adapter contains an instance of the adaptee
-- More flexible and widely used (especially in languages like Java, C#)
+### 🧬 Class Adapter (Inheritance)
+The adapter inherits from the adaptee class and implements the target interface. This requires **multiple inheritance**, which is not supported in all programming languages (e.g., supported in C++, but not in Java).
 
-```text
-Client → Target → Adapter → Adaptee
+---
+
+## Why use Adapter?
+
+*   **Integration**: Allows legacy code to work with modern classes without changing the original source.
+*   **Flexibility**: You can create different adapters for different incompatible classes.
+*   **Single Responsibility**: You separate the interface or data conversion logic from the primary business logic.
+
+---
+
+## Real-world Analogy
+A classic example is a **Power Adapter**. If you have a US-style plug (Adaptee) but are in a European outlet (Target), you use an adapter to bridge the gap so your device can get power.

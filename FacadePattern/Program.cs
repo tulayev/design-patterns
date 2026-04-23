@@ -1,4 +1,13 @@
 ﻿using FacadePattern;
 
+
 var squareGenerator = new MagicSquareGeneratorFacade();
-squareGenerator.Generate(5);
+
+foreach (var list in squareGenerator.Generate(2))
+{
+    foreach (var num in list)
+    {
+        Console.Write($"{num} ");
+    }
+    Console.WriteLine();
+}
