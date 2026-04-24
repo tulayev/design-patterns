@@ -1,1 +1,1 @@
-# Design Pattern Examples (Head First)
+# Design Pattern Examples
