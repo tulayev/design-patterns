@@ -1,8 +1,8 @@
-﻿// Build the chain
-using ChainOfResponsibilityPattern.Ticket;
+﻿using ChainOfResponsibilityPattern.Ticket;
 using ChainOfResponsibilityPattern.Ticket.Handlers;
 
 
+// Build the chain
 var bot = new BotHandler();
 var junior = new JuniorSupportHandler();
 var senior = new SeniorSupportHandler();
@@ -15,10 +15,10 @@ bot.SetNext(junior)
 // Test tickets
 var tickets = new[]
 {
-    new SupportTicket { Issue = "How do I reset my password?", Priority = TicketPriority.Low      },
-    new SupportTicket { Issue = "Order not delivered",         Priority = TicketPriority.Medium   },
-    new SupportTicket { Issue = "Payment processing error",    Priority = TicketPriority.High     },
-    new SupportTicket { Issue = "Data breach detected!",       Priority = TicketPriority.Critical },
+    new SupportTicket { Issue = "How do I reset my password?", Priority = TicketPriority.Low },
+    new SupportTicket { Issue = "Order not delivered", Priority = TicketPriority.Medium },
+    new SupportTicket { Issue = "Payment processing error", Priority = TicketPriority.High },
+    new SupportTicket { Issue = "Data breach detected!", Priority = TicketPriority.Critical },
 };
 
 foreach (var ticket in tickets)
