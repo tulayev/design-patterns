@@ -1,11 +1,13 @@
-﻿// Create Tree structure
-//       1
-//      / \
-//     2   3
-//    / \
-//   4   5
+﻿using IteratorPattern;
 
-using IteratorPattern;
+/*
+ Create Tree structure
+       1
+      / \
+     2   3
+    / \
+   4   5
+*/
 
 var node4 = new TreeNode<int>(4);
 var node5 = new TreeNode<int>(5);
