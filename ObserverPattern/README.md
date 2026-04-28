@@ -38,7 +38,7 @@ You (the **Observer**) subscribe to a channel (the **Subject**). When the channe
 
 ### ✅ Why Use It?
 *   **Loose Coupling**: Subject and Observers remain independent.
-*   **Open/Closed Principle**: Add new observers without changing the Subject’s code.
+*   **Open/Closed Principle**: Add new observers without changing the Subject's code.
 *   **Dynamic Relationships**: Subscriptions can be managed at runtime.
 
 ### ⚠️ Potential Pitfalls
