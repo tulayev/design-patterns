@@ -1,21 +1,11 @@
-﻿using MementoPattern;
+﻿var tokenMachine = new TokenMachine();
 
+var snapShot1 = tokenMachine.AddToken(1);
+var snapShot2 = tokenMachine.AddToken(2);
+var snapShot3 = tokenMachine.AddToken(3);
 
-var editor = new TextEditor();
-var history = new History();
+Console.WriteLine(tokenMachine);
 
-editor.Type("Hello");
-history.Push(editor.Save());
+tokenMachine.Revert(snapShot1);
 
-editor.Type(", World");
-history.Push(editor.Save());
-
-editor.Type("!!!");
-
-Console.WriteLine("\n-- Undo --");
-editor.Restore(history.Pop()!);
-Console.WriteLine($"[Editor] '{editor.GetContent()}'");
-
-Console.WriteLine("\n-- Undo --");
-editor.Restore(history.Pop()!);
-Console.WriteLine($"[Editor] '{editor.GetContent()}'");
+Console.WriteLine(tokenMachine);

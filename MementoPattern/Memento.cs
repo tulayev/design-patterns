@@ -1,9 +1,9 @@
-﻿internal class Memento
+﻿public class Memento
 {
-    public string Content { get; }
+    public List<Token> Tokens { get; } = [];
 
-    public Memento(string content)
+    public Memento(List<Token> tokens)
     {
-        Content = content;
+        Tokens = [.. tokens.Select(x => new Token(x.Value))];
     }
 }
