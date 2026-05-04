@@ -1,9 +1,16 @@
-﻿using DecoratorPattern;
-using DecoratorPattern.Coffees;
-using DecoratorPattern.Condiments;
+﻿// Plain coffee
+ICoffee coffee = new SimpleCoffee();
+Console.WriteLine(coffee);
 
+// Coffee + Milk
+coffee = new MilkDecorator(coffee);
+Console.WriteLine(coffee);
 
-Beverage beverage = new HouseBlend();
-beverage = new Mocha(beverage);
+// Coffee + Milk + Sugar
+coffee = new SugarDecorator(coffee);
+Console.WriteLine(coffee);
 
-Console.WriteLine(beverage.ToString());
+// Coffee + Milk + Sugar + Caramel + Whip
+coffee = new CaramelDecorator(coffee);
+coffee = new WhipDecorator(coffee);
+Console.WriteLine(coffee);
