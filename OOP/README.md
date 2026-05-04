@@ -1,4 +1,4 @@
-# 🏛️ The 4 Pillars of OOP
+# The 4 Pillars of OOP
 
 Object-Oriented Programming (OOP) is built on four core principles that help create modular, reusable, and maintainable software.
 

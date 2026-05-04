@@ -7,7 +7,7 @@ The **Null Object Design Pattern** is a behavioral design pattern that provides 
 ## 1. 🔍 The Core Problem
 In most object-oriented languages, calling a method on a `null` reference causes a crash (e.g., `NullReferenceException`). To prevent this, developers often litter their code with defensive checks:
 
-```c#
+```csharp
 // ❌ Problem: Defensive checks clutter the business logic
 if (user != null) {
     user.SendNotification("Order shipped");
@@ -19,7 +19,7 @@ if (user != null) {
 ## 2. 💡 The Solution
 Instead of returning `null`, you return a **Null Object**—a special instance that implements the same interface but has "empty" or "neutral" methods.
 
-```c#
+```csharp
 // ✅ Solution: Treating all users uniformly
 user.SendNotification("Order shipped"); 
 // If 'user' is null, SendNotification() simply does nothing.

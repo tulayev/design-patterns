@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using TemplateMethodPattern.Exporters;
+
+
+var data = new List<string> { "Alice", "Bob", "Charlie" };
+
+Console.WriteLine("=== CSV Export ===");
+new CsvExporter().Export(data);
+
+Console.WriteLine();
+
+Console.WriteLine("=== JSON Export ===");
+new JsonExporter().Export(data);
